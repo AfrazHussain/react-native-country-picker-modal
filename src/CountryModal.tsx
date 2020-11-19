@@ -1,5 +1,11 @@
 import * as React from 'react'
-import { ModalProps, SafeAreaView, StyleSheet, Platform } from 'react-native'
+import {
+  View,
+  ModalProps,
+  SafeAreaView,
+  StyleSheet,
+  Platform,
+} from 'react-native'
 import { AnimatedModal } from './AnimatedModal'
 import { Modal } from './Modal'
 import { useTheme } from './CountryTheme'
@@ -24,8 +30,8 @@ export const CountryModal = ({
   const { backgroundColor } = useTheme()
   const { teleport } = React.useContext(CountryModalContext)
   const content = (
-    <SafeAreaView style={[styles.container, { backgroundColor }]}>
-      {children}
+    <SafeAreaView style={styles.container}>
+      <View style={{ backgroundColor }}>{children}</View>
     </SafeAreaView>
   )
   React.useEffect(() => {
