@@ -27,11 +27,13 @@ export const CountryModal = ({
   withModal?: boolean
   disableNativeModal?: boolean
 }) => {
-  const { backgroundColor } = useTheme()
+  const { backgroundColor, modalBackgroundColor } = useTheme()
   const { teleport } = React.useContext(CountryModalContext)
   const content = (
-    <SafeAreaView style={styles.container}>
-      <View style={{ backgroundColor }}>{children}</View>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: modalBackgroundColor }]}
+    >
+      <View style={[styles.container, { backgroundColor }]}>{children}</View>
     </SafeAreaView>
   )
   React.useEffect(() => {
